@@ -5,8 +5,10 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from Git
-                userRemoteConfigs: [[url: 'https://github.com/katakamX/git-check3.git']]
-
+                checkout([$class: 'GitSCM', 
+                    userRemoteConfigs: [[url: 'https://github.com/katakamX/git-check3.git']], 
+                    branches: [[name: '*/master']] // Adjust the branch as necessary
+                ])
             }
         }
 
@@ -32,4 +34,3 @@ pipeline {
         }
     }
 }
-
