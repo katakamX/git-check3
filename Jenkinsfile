@@ -5,7 +5,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from Git
-                git url: 'https://github.com/username/repo-name.git', branch: 'master' // Adjust the URL and branch as needed
+                userRemoteConfigs: [[url: 'https://github.com/katakamX/git-check3.git']]
+
             }
         }
 
